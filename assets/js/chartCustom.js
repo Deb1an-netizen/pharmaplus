@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-    //$("#doc_list").hide();
+    
     
     
     $('#pat_btn').click(function(){
@@ -9,7 +9,7 @@ $(document).ready(function() {
     
     $('#svHunt').DataTable( {
         "ajax":{ 
-            "url":'assets/php/superHunt.php',
+            "url":'assets/php/superHunt.json',
             "dataSrc" : ""
         },
         "columns" : [
@@ -27,7 +27,7 @@ $(document).ready(function() {
 $(document).ready(function() {
     $('#docHunt').DataTable( {
         "ajax": {
-            "url" : 'assets/php/doctorhunt.php',
+            "url" : 'assets/php/doctorhunt.json',
             "dataSrc" : ""
         },
         "columns" : [
@@ -37,23 +37,46 @@ $(document).ready(function() {
             {"data": "lname"},
             {"data": "specialty"},
             {"data": "years_xp"},
+            {"data": "quantity"},
+            {"data": "name"},
         ]
     } );
-    /*$('#main_btn').click(function(){
-        //e.preventDefault();
-
+    $('#main_btn').click(function(){
         $.ajax({
             type: 'POST',
             url: "assets/php/doctorhunt.php",
             data: $('#main_form').serialize(),
             success: function(data){
-                alert('Success' + data);
+                alert('Loading finished');
                 
             }
         });
-    });*/
+    });
+    $('#btn2').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: "assets/php/bar.php",
+            data: $('#form2').serialize(),
+            success: function(data){
+                alert('Loading finished');
+                
+            }
+        });
+    });
+    $('#btn3').click(function(){
+        $.ajax({
+            type: 'POST',
+            url: "assets/php/superHunt.php",
+            data: $('#form3').serialize(),
+            success: function(data){
+                alert('Loading finished');
+                
+            }
+        });
+    });
 } );
 $(document).ready(function(){
+    
     $.ajax({
         type: "GET",
         url: "http://127.0.0.1/pharma/assets/php/bar.json",
