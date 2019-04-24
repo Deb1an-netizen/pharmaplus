@@ -56,7 +56,7 @@ $(document).ready(function() {
 $(document).ready(function(){
     $.ajax({
         type: "GET",
-        url: "http://127.0.0.1/pharma/assets/php/bar.php",
+        url: "http://127.0.0.1/pharma/assets/php/bar.json",
         success: function(data){
             console.log(data);
             var date = [];
