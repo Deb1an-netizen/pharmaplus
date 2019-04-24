@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>srtdash - ICO Dashboard</title>
+    <title>PharmaPLUS</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="assets/images/icon/favicon.ico">
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -133,13 +133,9 @@
                         <h4 class="header-title">Target finder</h4>
                         <form id="main_form" method="POST">
                             <div class="form-row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label class="col-form-label">Company Name</label>
                                     <input class="form-control" placeholder="DipanitaMedico" type="text" name="name">
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="col-form-label">Drug's Name</label>
-                                    <input class="form-control" placeholder="Atenolol" type="text" name="drug_name">
                                 </div>
                                 <button type="submit" id="main_btn" name="submit" class="btn btn-primary btn-sm ">Submit</button>
                             </div>
@@ -159,7 +155,8 @@
                                                         <th>Last Name</th>
                                                         <th>Specialty</th>
                                                         <th>Years of Experience</th>
-                                                        
+                                                        <th>Quantity</th>
+                                                        <th>Company</th>
                                                     </tr>
                                                 </thead>
                                                 <tfoot>
@@ -170,7 +167,8 @@
                                                         <th>Last Name</th>
                                                         <th>Specialty</th>
                                                         <th>Years of Experience</th>
-                                                        
+                                                        <th>Quantiy</th>
+                                                        <th>Company</th>
                                                     </tr>
                                                 </tfoot>
                                             </table>
@@ -186,21 +184,21 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <h4 class="header-title">Sells between: </h4>
-                        <form action="" method="POST">
+                        <form id="form2" method="POST">
                             <div class="form-row">
                                 <div class="col-md-4 mb-3">
                                     <label class="col-form-label">Company Name</label>
-                                    <input class="form-control" placeholder="DipanitaMedico" type="text" id="name">
+                                    <input class="form-control" placeholder="DipanitaMedico" type="text" name="name2">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label class="col-form-label">Start DATE</label>
-                                    <input class="form-control" type="date" id="start_date">
+                                    <input class="form-control" type="date" name="start_date">
                                 </div>
                                 <div class="col-md-4 mb-3">
                                     <label class="col-form-label">End DATE</label>
-                                    <input class="form-control" type="date" id="end_date">
+                                    <input class="form-control" type="date" name="end_date">
                                 </div>
-                                <button type="button" class="btn btn-primary btn-sm ">Submit</button>
+                                <button id="btn2" type="submit" class="btn btn-primary btn-sm ">Submit</button>
                             </div>
                         </form>
                         <canvas id="top5"></canvas>
@@ -212,17 +210,13 @@
                 <div class="card mt-5">
                     <div class="card-body">
                         <h4 class="header-title">Target finder</h4>
-                        <form action="" method="POST">
+                        <form id="form3" method="POST">
                             <div class="form-row">
-                                <div class="col-md-6 mb-3">
+                                <div class="col-md-12 mb-3">
                                     <label class="col-form-label">Company Name</label>
-                                    <input class="form-control" placeholder="DipanitaMedico" type="text" id="name">
+                                    <input class="form-control" placeholder="DipanitaMedico" type="text" name="name3">
                                 </div>
-                                <div class="col-md-6 mb-3">
-                                    <label class="col-form-label">Drug's Name</label>
-                                    <input class="form-control" placeholder="Atenolol" type="text" id="drug_name">
-                                </div>
-                                <button type="button" class="btn btn-primary btn-sm ">Submit</button>
+                                <button id="btn3" type="submit" class="btn btn-primary btn-sm ">Submit</button>
                             </div>
                             <div class="form-row">
                                 <div class="col-12 mt-5">

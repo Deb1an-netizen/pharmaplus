@@ -22,6 +22,11 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    <script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
     
 </head>
 
@@ -459,7 +464,8 @@
                                             <div class="form-row">
                                                 <div class="col-md-4 mb-3">
                                                     <label class="col-form-label">Patients SSN</label>
-                                                    <input class="pssn form-control" placeholder="SSN" type="text" name="pssn">
+                                                    <input class="pssn form-control" id="pat_sug"placeholder="SSN" type="text" name="pssn">
+                                                    <div id="sug-box"></div>
                                                 </div>
                                                 <div class="col-md-4 mb-3">
                                                     <label class="col-form-label">Doctors SSN</label>
@@ -492,6 +498,29 @@
                                     </div>
                                     <button type="submit" name="submit" class="btn btn-dark btn-lg btn-block">Submit</button>
                                 </form>
+                                <!--lol
+                                <script>
+                                    $("#pat_sug").autocomplete({
+                                        source : function(request , callback){
+                                            var data = { term: request.term};
+                                            $.ajax ({
+                                                url : "assets/php/suggest.php",
+                                                data : data,
+                                                complete: function(xhr, result){
+                                                    if(result != "success") return;
+                                                    var response = xhr.responseText;
+                                                    var pssn = [];
+
+                                                    $(response).filter("li").each(function(){
+                                                        pssn.push($(this).text());
+                                                    });
+                                                    callback(pssn);
+                                                }
+                                            });
+                                        }
+                                    });
+                                </script>
+                                -->
                             </div>
                         </div>
                     </div>
@@ -512,7 +541,8 @@
 
     <!-- offset area end -->
     <!-- jquery latest version -->
-    <script src="assets/js/vendor/jquery-2.2.4.min.js"></script>
+    
+    
     <!-- bootstrap 4 js -->
     <script src="assets/js/popper.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
@@ -539,6 +569,8 @@
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/scripts.js"></script>
     <script src="assets/js/entry.js"></script>
+    <script src="assets/js/suggest.js"></script>
+    
 </body>
 
 </html>
